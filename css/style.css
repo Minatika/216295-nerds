@@ -5,12 +5,12 @@ body {
   font-weight: 500;
   font-family: "Roboto", "Arial", sans-serif;
   background-color: #ffffff;
+  margin: 0;
 }
 
 @font-face {
   font-weight: normal;
   font-style: normal;
-
   font-family: "symbols-nerds";
   src: url("../fonts/symbols-nerds.woff") format("woff"),
        url("../fonts/symbols-nerds.woff2") format("woff2");
@@ -22,7 +22,6 @@ body {
   width: 1em;
   margin-right: 0.2em;
   margin-left: 0.2em;
-
   font-weight: normal;
   line-height: 1em;
   font-family: "symbols-nerds";
@@ -31,7 +30,6 @@ body {
   text-decoration: inherit;
   font-style: normal;
   font-variant: normal;
-
   speak: none;
 }
 
@@ -53,6 +51,17 @@ body {
   clear: both;
 }
 
+h1 {
+  font-size: 40px;
+  line-height: 48px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
 h2 {
   font-size: 18px;
   line-height: 30px;
@@ -62,6 +71,7 @@ h2 {
 }
 
 .main-header {
+  width: 100%;
   min-height: 328px;
   background-color: #eeeeee;
   margin-bottom: 80px;
@@ -104,6 +114,7 @@ h2 {
 
 .main-menu a {
   display: block;
+  position: relative;
   padding: 27px 45px 0 0;
   color: #283136;
   text-decoration: none;
@@ -115,6 +126,16 @@ h2 {
 
 .main-menu a:active {
   color: rgba(0, 0, 0, 0.4);
+}
+
+.main-menu a.current::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 45px;
+  height: 2px;
+  background: #fb565a;
 }
 
 .user-block {
@@ -815,4 +836,239 @@ p.contacts-title {
 
 .overlay-show {
   display: block;
+}
+
+.inner-page h1 {
+  padding: 0 95px;
+  margin-right: 10px;
+}
+
+.inner-page .main-navigation {
+  margin-bottom: 65px;
+}
+
+.filters {
+  float: left;
+  width: 240px;
+  min-height: 730px;
+  margin-right: 80px;
+}
+
+.filter-cost {
+  width: 240px;
+  margin-bottom: 46px;
+}
+
+.cost-title {
+  display: block;
+  margin: -6px 0 14px;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.range-controls {
+  position: relative;
+  height: 41px;
+  margin-bottom: 15px;
+  padding: 39px 20px 0;
+  border-radius: 5px;
+  background: #f1f1f1;
+}
+
+.range-controls .scale {
+  height: 2px;
+  background: #d7dcde;
+}
+
+.range-controls .bar {
+  width: 70%;
+  height: 2px;
+  background: #00ca74;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  width: 4px;
+  height: 4px;
+  cursor: pointer;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  background: #ababab;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+}
+
+.range-controls .toggle-min {
+  left: 20px;
+}
+
+.range-controls .toggle-max {
+  left: 160px;
+}
+
+.price-controls {
+  font-size: 0;
+}
+
+.price-controls label {
+  display: inline-block;
+  width: 50%;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.max-price {
+  text-align: right;
+}
+
+.price-controls input {
+  width: 60px;
+  margin-left: 5px;
+  padding: 8px 10px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: #283136;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: #f1f1f1;
+}
+
+.filter-grid {
+  width: 240px;
+  margin-bottom: 46px;
+}
+
+.grid-title {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.filter-grid input[type="radio"] + label {
+  position: relative;
+  display: block;
+  margin: 18px 0;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.filter-grid input[type="radio"] {
+  display: none;
+}
+
+.filter-grid input[type="radio"] + label::before {
+  content: "\25cb";
+  position: absolute;
+  left: 0;
+  font-family: "symbols-nerds";
+  font-size: 28px;
+  color: #c1c1c1;
+}
+
+.filter-grid input[type="radio"]:checked + label::before {
+  content: "\25cf";
+}
+
+.filter-features {
+  width: 240px;
+  margin-bottom: 60px;
+}
+.features-title {
+  display: block;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.filter-features input[type="checkbox"] + label {
+  position: relative;
+  display: block;
+  margin: 19px 0;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.filter-features input[type="checkbox"] {
+  display: none;
+}
+
+.filter-features input[type="checkbox"] + label::before {
+  content: "\2610";
+  position: absolute;
+  left: 0;
+  font-family: "symbols-nerds";
+  font-size: 28px;
+  color: #c1c1c1;
+}
+
+.filter-features input[type="checkbox"]:checked + label::before {
+  content: "\2611";
+}
+
+.show {
+  width: 155px;
+  min-height: 38px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #000000;
+  font-weight: 500;
+  border-radius: 3px;
+  background: #f1f1f1;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.show:hover {
+  background: #e5e5e5;
+}
+
+.show:active {
+  background: #d5d5d5;
+  box-shadow: inset 0 3px 0 0 rgba(0, 0, 0, 0.15);
+}
+
+.content {
+  float: left;
+  width: 560px;
+  min-height: 1200px;
+}
+
+.sort {
+  min-height: 35px;
+}
+
+.sort-title {
+  display: inline-block;
+  margin: 0 35px 0 -1px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.links {
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  text-decoration: underline;
 }
